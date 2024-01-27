@@ -8,6 +8,7 @@ async function startApolloServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    csrfPrevention: true,
   });
 
   const { url } = await startStandaloneServer(server, {
