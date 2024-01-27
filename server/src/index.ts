@@ -4,6 +4,8 @@ import { resolvers } from './resolvers';
 import { typeDefs } from './schema';
 import { TrackAPI } from './datasources/track-api';
 
+const port = Number(process.env.PORT) || 4000;
+
 async function startApolloServer() {
   const server = new ApolloServer({
     typeDefs,
@@ -21,9 +23,11 @@ async function startApolloServer() {
         },
       };
     },
+    listen: { port },
   });
 
   console.log(`🚀 Server is running!
+🔉 Listening on port ${port}
 📭 Query at ${url}
   `);
 }
