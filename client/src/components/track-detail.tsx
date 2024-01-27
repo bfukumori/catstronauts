@@ -18,12 +18,12 @@ import MarkDown from './md-content';
  * author, length, number of views, modules list, among other things.
  * It provides access to the first module of the track.
  */
-const TrackDetail: React.FC<{track: any}> = ({track}) => {
+const TrackDetail: React.FC<{ track: any }> = ({ track }) => {
   const {
     title,
     description,
     thumbnail,
-    author = { photo: '', name: ''},
+    author = { photo: '', name: '' },
     length,
     modulesCount,
     modules = [],
@@ -59,16 +59,16 @@ const TrackDetail: React.FC<{track: any}> = ({track}) => {
             <AuthorName>{author.name}</AuthorName>
           </DetailItem>
           <div>
-            {/* Need to comment this out until Link is placed within a Router */}
-            {/* <StyledLink to={`./module/${modules[0]['id']}`}> */}
+            <StyledLink to={`./module/${modules[0]['id']}`}>
               <Button
+                placeholder=""
                 icon={<IconRun width="20px" />}
                 color={colors.pink.base}
                 size="large"
               >
                 Start Track
               </Button>
-            {/* </StyledLink> */}
+            </StyledLink>
           </div>
         </DetailRow>
         <ModuleListContainer>

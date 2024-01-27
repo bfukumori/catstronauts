@@ -11,7 +11,10 @@ import MarkDown from './md-content';
  * Module Detail renders content of a given module:
  * Video player, modules navigation and markdown content
  */
-const ModuleDetail: React.FC<{track: any, module: any}> = ({ track, module }) => {
+const ModuleDetail: React.FC<{ track: any; module: any }> = ({
+  track,
+  module,
+}) => {
   const { videoUrl, title, content } = module;
   const { width } = useWindowDimensions();
 
