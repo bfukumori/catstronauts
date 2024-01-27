@@ -49,10 +49,12 @@ export const typeDefs = gql`
     tracksForHome: [Track!]!
     "Fetch a specific track, provided a track's ID"
     track(id: ID!): Track!
+    "Fetch a specific module, provided a module's ID"
     module(id: ID!): Module!
   }
 
   type Mutation {
+    "Increase the number of track's views by 1"
     incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
   }
 
